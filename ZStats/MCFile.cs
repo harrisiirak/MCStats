@@ -33,7 +33,7 @@ namespace ZStats
         public CaseInsensitiveDictionary<object> ExtensionData { get; set; }        // string key
 
 
-        public string getProperty(string name) => ExtensionData.TryGetValue(name, out object value) ? value?.ToString() ?? "" : "";
+        public string getProperty(string name) => ExtensionData != null && ExtensionData.TryGetValue(name, out object value) ? value?.ToString() ?? "" : "";
 
         public List<DateTime> played = new List<DateTime>();
         public List<DateTime> prePlayed = new List<DateTime>();
